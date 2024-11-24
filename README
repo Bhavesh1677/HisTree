@@ -1,0 +1,333 @@
+
+---
+# HisTree 🌳
+
+**HisTree** is a lightweight, Git-like version control system implemented in Node.js. It provides essential version control functionalities such as initializing repositories, adding files, committing changes, managing branches, and viewing commit histories—all through a simple command-line interface (CLI).
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Initialize Repository](#initialize-repository)
+  - [Add Files](#add-files)
+  - [Commit Changes](#commit-changes)
+  - [View Commit Log](#view-commit-log)
+  - [Show Commit Diff](#show-commit-diff)
+  - [Branch Management](#branch-management)
+  - [Checkout](#checkout)
+  - [Merge Branches](#merge-branches)
+  - [Reset Repository](#reset-repository)
+  - [Check Status](#check-status)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Features
+
+- 🗂 **Initialize Repository**: Set up a new HisTree repository.
+- ➕ **Add Files**: Stage files for committing.
+- 💾 **Commit Changes**: Save snapshots of your project with commit messages.
+- 🕮 **View Commit Log**: Browse through the history of commits.
+- 🔍 **Show Commit Diff**: View differences between commits.
+- 🌿 **Branch Management**: Create and list branches.
+- 🔄 **Checkout**: Switch between branches or specific commits.
+- 🔀 **Merge Branches**: Combine changes from different branches.
+- 🔧 **Reset Repository**: Undo commits with soft or hard reset options.
+- 📊 **Check Status**: Display the current state of the working directory and staging area.
+
+---
+
+## Prerequisites
+
+Before installing **HisTree**, ensure you have the following installed on your system:
+
+- **Node.js** (v14 or later)
+- **npm** (Node Package Manager) or **yarn**
+
+You can download Node.js from the [official website](https://nodejs.org/).
+
+---
+
+## Installation
+
+You can install **HisTree** globally using npm or yarn:
+
+### Using npm
+
+```bash
+npm install -g histree
+```
+
+### Using yarn
+
+```bash
+yarn global add histree
+```
+
+> **Note:** You might need administrative privileges to install packages globally. Use `sudo` if necessary.
+
+---
+
+## Usage
+
+After installation, you can use the `histree` command in your terminal. Below are the available commands and their descriptions.
+
+### Initialize Repository
+
+Set up a new HisTree repository in the current directory.
+
+```bash
+histree init
+```
+
+### Add Files
+
+Stage specific files for the next commit.
+
+```bash
+histree add <file>
+```
+
+*Example:*
+
+```bash
+histree add index.js
+```
+
+### Commit Changes
+
+Commit staged files with a descriptive message.
+
+```bash
+histree commit <message>
+```
+
+*Example:*
+
+```bash
+histree commit "Initial commit with project structure"
+```
+
+### View Commit Log
+
+Display the history of commits in the repository.
+
+```bash
+histree log
+```
+
+### Show Commit Diff
+
+View the differences introduced in a specific commit.
+
+```bash
+histree show <commitHash>
+```
+
+*Example:*
+
+```bash
+histree show a1b2c3d
+```
+
+### Branch Management
+
+#### Create a New Branch
+
+Create a new branch with the specified name.
+
+```bash
+histree branch <branchName>
+```
+
+*Example:*
+
+```bash
+histree branch feature-login
+```
+
+#### List All Branches
+
+List all existing branches in the repository.
+
+```bash
+histree branches
+```
+
+### Checkout
+
+Switch to a different branch or a specific commit.
+
+```bash
+histree checkout <target>
+```
+
+*Example:*
+
+```bash
+histree checkout feature-login
+```
+
+### Merge Branches
+
+Merge a specified branch into the current branch.
+
+```bash
+histree merge <branchName>
+```
+
+*Example:*
+
+```bash
+histree merge feature-login
+```
+
+> **Note:** The current implementation includes a placeholder for merge logic. Handling conflicts and advanced merge scenarios may require further development.
+
+### Reset Repository
+
+Reset the repository to a specific commit with optional modes.
+
+```bash
+histree reset <commitHash> [mode]
+```
+
+- `mode` can be either `soft` or `hard`.
+  - **Soft Reset**: Moves `HEAD` to the specified commit without altering the working directory or staging area.
+  - **Hard Reset**: Moves `HEAD` and updates the working directory and staging area to match the specified commit.
+
+*Examples:*
+
+```bash
+histree reset a1b2c3d
+histree reset a1b2c3d hard
+```
+
+### Check Status
+
+Display the current status of the working directory and staging area.
+
+```bash
+histree status
+```
+
+---
+
+## Examples
+
+Here are some common workflows using **HisTree**:
+
+1. **Initialize a New Repository**
+
+   ```bash
+   mkdir my-project
+   cd my-project
+   histree init
+   ```
+
+2. **Add and Commit Files**
+
+   ```bash
+   touch index.js
+   histree add index.js
+   histree commit "Add index.js with basic setup"
+   ```
+
+3. **Create and Switch to a New Branch**
+
+   ```bash
+   histree branch feature-auth
+   histree checkout feature-auth
+   ```
+
+4. **Merge Branches**
+
+   ```bash
+   histree checkout main
+   histree merge feature-auth
+   ```
+
+5. **View Commit History**
+
+   ```bash
+   histree log
+   ```
+
+6. **Check Repository Status**
+
+   ```bash
+   histree status
+   ```
+
+---
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to **HisTree**, please follow these steps:
+
+1. **Fork the Repository**
+
+   Click the "Fork" button at the top of this page to create your own fork of the repository.
+
+2. **Clone Your Fork**
+
+   ```bash
+   git clone https://github.com/your-username/histree.git
+   cd histree
+   ```
+
+3. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Create a New Branch**
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+5. **Make Your Changes**
+
+   Implement your feature or bug fix.
+
+6. **Commit Your Changes**
+
+   ```bash
+   git commit -m "Add feature: your feature description"
+   ```
+
+7. **Push to Your Fork**
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+8. **Create a Pull Request**
+
+   Go to the original repository and click "New Pull Request" to submit your changes for review.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgements
+
+- [Commander.js](https://github.com/tj/commander.js) - CLI framework used for command parsing.
+- [Chalk](https://github.com/chalk/chalk) - Terminal string styling.
+- [diff](https://github.com/kpdecker/jsdiff) - Library for comparing differences between texts.
+
+---
+
+Feel free to customize this README further to better fit your project's specifics and any additional features or instructions you may have!
