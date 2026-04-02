@@ -2,10 +2,11 @@
   "name": "histree",
   "version": "1.0.1",
   "bin": {
-    "histree": "./bin/histree.mjs"
+    "histree": "bin/histree.mjs"
   },
   "description": "Version Control System, liteweight",
-  "main": "index.js",
+  "main": "./src/HisTree.mjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
