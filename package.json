@@ -2,7 +2,7 @@
   "name": "histree",
   "version": "1.0.0",
   "bin": {
-    "histree": "./HisTree.mjs"
+    "histree": "./bin/histree.mjs"
   },
   "description": "Version Control System, liteweight",
   "main": "index.js",
